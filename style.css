@@ -121,4 +121,8 @@ body {
     margin-top: 1rem;
     font-size: 1rem;
   }
+  .tasks .task h2 {
+    font-size: 16px;
+    font-weight: bold;
+  }
 }
