@@ -68,9 +68,10 @@ function addElementToPageFrom(arrayOfTasks) {
     div.className = "task";
 
     div.setAttribute("data-id", id);
-    let h2 = document.createElement("h2");
-    h2.appendChild(document.createTextNode(title));
-    div.appendChild(h2);
+    let text = document.createElement("textarea");
+    text.setAttribute("readonly", true);
+    text.appendChild(document.createTextNode(title));
+    div.appendChild(text);
 
     // create buttonDel as span
     let buttonsCont = document.createElement("div");
@@ -99,7 +100,6 @@ taskDiv.addEventListener("click", (e) => {
   if (e.target.classList.contains("del")) {
     e.target.parentElement.parentElement.remove();
     // remove from local storge
-    console.log(e.target.parentElement.getAttribute("data-id"));
     removeTaskWith(
       e.target.parentElement.parentElement.getAttribute("data-id")
     );
